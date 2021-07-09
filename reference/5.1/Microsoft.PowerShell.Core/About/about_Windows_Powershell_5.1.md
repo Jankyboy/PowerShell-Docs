@@ -1,13 +1,14 @@
 ---
+description:  Describes new features that are included in Windows PowerShell 5.1. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/17/2018
 online version: https://docs.microsoft.com/powershell/module/?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Windows_PowerShell_5.1
+title: about Windows Powershell 5.1
 ---
 
-# about_Windows_PowerShell_5.1
+# about_Windows_Powershell_5.1
 
 ## SHORT DESCRIPTION
 

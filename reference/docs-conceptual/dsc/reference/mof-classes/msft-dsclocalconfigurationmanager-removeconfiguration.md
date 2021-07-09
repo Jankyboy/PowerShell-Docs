@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  RemoveConfiguration method
+ms.topic: reference
+title: RemoveConfiguration method
+description: RemoveConfiguration method
 ---
 # RemoveConfiguration method
 
@@ -11,8 +12,8 @@ Removes the configuration files.
 
 ```mof
 uint32 RemoveConfiguration(
-  [in] uint32  Stage,
-  [in] boolean Force
+  [in] uint32  Stage,
+  [in] boolean Force
 );
 ```
 

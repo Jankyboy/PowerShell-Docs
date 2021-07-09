@@ -1,7 +1,8 @@
 ---
 ms.date: 07/14/2020
-keywords:  dsc,powershell,configuration,setup
-title:  ApplyConfiguration method
+ms.topic: reference
+title: ApplyConfiguration method
+description: ApplyConfiguration method
 ---
 # ApplyConfiguration method
 
@@ -13,7 +14,7 @@ If there is no configuration pending, this method reapplies the current configur
 
 ```mof
 uint32 ApplyConfiguration(
-  [in] boolean force
+  [in] boolean force
 );
 ```
 

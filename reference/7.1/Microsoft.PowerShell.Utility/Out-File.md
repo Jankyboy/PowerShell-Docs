@@ -3,12 +3,11 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/19/2020
+ms.date: 09/21/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-file?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-File
 ---
-
 # Out-File
 
 ## SYNOPSIS
@@ -32,8 +31,11 @@ Out-File [[-Encoding] <Encoding>] -LiteralPath <string> [-Append] [-Force] [-NoC
 
 ## DESCRIPTION
 
-The `Out-File` cmdlet sends output to a file. When you need to specify parameters for the output use
-`Out-File` rather than the redirection operator (`>`).
+The `Out-File` cmdlet sends output to a file. It implicitly uses PowerShell's formatting system to
+write to the file. The file receives the same display representation as the terminal. This means
+that the output may not be ideal for programmatic processing unless all input objects are strings.
+When you need to specify parameters for the output, use `Out-File` rather than the redirection
+operator (`>`). For more information about redirection, see [about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md).
 
 ## EXAMPLES
 
@@ -131,6 +133,37 @@ provider `Alias:`. The `Get-Location` cmdlet displays the complete path for `Ali
 **FilePath** parameter to specify the complete path and filename for the output,
 **C:\TestDir\AliasNames.txt**. The `Get-Content` cmdlet uses the **Path** parameter and displays the
 file's content in the PowerShell console.
+
+### Example 5: Set file output width for entire scope
+
+This example uses `$PSDefaultParameterValues` to set the `Width` parameter for all invocations of
+`Out-File` and the redirection operartors (`>` and `>>`) to 2000.  This is an easy way to ensure
+that everywhere in a scope you output table formatted data to file, PowerShell will use a line
+width of 2000 instead of a line width determined by the PowerShell host's console width.
+
+```powershell
+function DemoDefaultOutFileWidth() {
+    try {
+        $PSDefaultParameterValues['out-file:width'] = 2000
+
+        $logFile = "$pwd\logfile.txt"
+
+        Get-ChildItem Env:\ > $logFile
+
+        Get-Service -ErrorAction Ignore | Format-Table -AutoSize | Out-File $logFile -Append
+
+        Get-Process | Format-Table Id,SI,Name,Path,MainWindowTitle >> $logFile
+    }
+    finally {
+        $PSDefaultParameterValues.Remove('out-file:width')
+    }
+}
+
+DemoDefaultOutFileWidth
+```
+
+For more information about `$PSDefaultParameterValues`, see
+[about_Preference_Variables](../Microsoft.Powershell.Core/About/about_preference_variables.md#psdefaultparametervalues).
 
 ## PARAMETERS
 
@@ -298,7 +331,9 @@ Accept wildcard characters: False
 
 Specifies the number of characters in each line of output. Any additional characters are truncated,
 not wrapped. If this parameter is not used, the width is determined by the characteristics of the
-host. The default for the PowerShell console is 80 characters.
+host. The default for the PowerShell console is 80 characters. If you want to control the width for
+all invocations of `Out-File` as well as the redirection operators (`>` and `>>`), set
+`$PSDefaultParameterValues['out-file:width'] = 2000` before using `Out-File`.
 
 ```yaml
 Type: System.Int32
@@ -364,15 +399,15 @@ You can pipe any object to `Out-File`.
 
 ## NOTES
 
-The `Out` cmdlets do not format objects; they just render them and send them to the specified
-display destination. If you send an unformatted object to an `Out` cmdlet, the cmdlet sends it to a
-formatting cmdlet before rendering it.
+Input objects are automatically formatted as they would be in the terminal, but you can use a
+`Format-*` cmdlet to explicitly control the formatting of the output to the file. For example,
+`Get-Date | Format-List | Out-File out.txt`
 
-To send a PowerShell command's output to the `Out-File` cmdlet, use the pipeline. You can store data
-in a variable and use the **InputObject** parameter to pass data to the `Out-File` cmdlet.
+To send a PowerShell command's output to the `Out-File` cmdlet, use the pipeline. Alternatively, you
+can store data in a variable and use the **InputObject** parameter to pass data to the `Out-File`
+cmdlet.
 
-`Out-File` sends data but it does not produce any output objects. If you pipe the output of
-`Out-File` to `Get-Member`, the `Get-Member` cmdlet reports that no objects were specified.
+`Out-File` saves data to a file but it does not produce any output objects to the pipeline.
 
 ## RELATED LINKS
 

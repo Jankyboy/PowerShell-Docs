@@ -1,7 +1,6 @@
 ---
-Download Help Link: https://go.microsoft.com/fwlink/?linkid=390814
+Download Help Link: https://aka.ms/powershell51-help
 Help Version: 5.2.0.0
-keywords: powershell,cmdlet
 Locale: en-US
 Module Guid: 94b905ff-74b5-437e-89ed-7df44386533c
 Module Name: PSDesiredStateConfiguration
@@ -57,7 +56,7 @@ Applies LCM settings to nodes.
 Applies configuration to nodes.
 
 ### [Stop-DscConfiguration](Stop-DscConfiguration.md)
-Stops a running configuration.
+Stops a configuration job that is running.
 
 ### [Test-DscConfiguration](Test-DscConfiguration.md)
 Tests whether the actual configuration on the nodes matches the desired configuration.

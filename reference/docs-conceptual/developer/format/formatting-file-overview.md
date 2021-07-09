@@ -1,6 +1,8 @@
 ---
-title: "Formatting File Overview | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Formatting File Overview
+description: Formatting File Overview
 ---
 # Formatting File Overview
 
@@ -138,7 +140,7 @@ The following example shows the XML tags used to define a table view that contai
           </TableColumnItems>
         </TableRowEntry>
       </TableRowEntries>
-    </TableControl)
+    </TableControl>
   </View>
 </ViewDefinitions>
 

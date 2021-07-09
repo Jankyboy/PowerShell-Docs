@@ -1,3 +1,4 @@
+items:
 - name: How to use this documentation
   href: how-to-use-docs.md
 - name: Overview
@@ -5,21 +6,21 @@
   items:
   - name: What is PowerShell?
     href: overview.md
+  - name: What is a PowerShell command?
+    href: powershell-commands.md
   - name: PowerShell support lifecycle
     href: powershell-support-lifecycle.md
 - name: Install
   items:
   - name: Overview
     href: install/installing-powershell.md
-  - name: Migrating from Windows PowerShell 5.1 to PowerShell 7
-    href: install/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md
   - name: Installing PowerShell on Windows
     href: install/installing-powershell-core-on-windows.md
   - name: Installing PowerShell on Linux
     href: install/installing-powershell-core-on-linux.md
   - name: Installing PowerShell on macOS
     href: install/installing-powershell-core-on-macos.md
-  - name: Installing PowerShell on ARM
+  - name: Installing PowerShell on Arm
     href: install/powershell-core-on-arm.md
   - name: Using PowerShell in Docker
     href: install/PowerShell-in-Docker.md
@@ -51,30 +52,116 @@
       href: learn/ps101/10-script-modules.md
     - name: Appendix A - Help Syntax
       href: learn/ps101/appendix-a.md
+  - name: Tutorials
+    items:
+      - name: Introduction
+        href: learn/tutorials/00-introduction.md
+      - name: Discover PowerShell
+        href: learn/tutorials/01-discover-powershell.md
   - name: Deep dives
     items:
     - name: Overview
       href: learn/deep-dives/overview.md
-    - name: Everything you want to know about arrays
-      href: learn/deep-dives/everything-about-arrays.md
-    - name: Everything you want to know about hashtables
-      href: learn/deep-dives/everything-about-hashtable.md
-    - name: Everything you want to know about PSCustomObject
-      href: learn/deep-dives/everything-about-pscustomobject.md
-    - name: Everything you want to know about string substitution
-      href: learn/deep-dives/everything-about-string-substitutions.md
-    - name: Everything you want to know about if/then/else
-      href: learn/deep-dives/everything-about-if.md
-    - name: Everything you want to know about switch
-      href: learn/deep-dives/everything-about-switch.md
-    - name: Everything you want to know about exceptions
-      href: learn/deep-dives/everything-about-exceptions.md
-    - name: Everything you want to know about $null
-      href: learn/deep-dives/everything-about-null.md
-    - name: Everything you want to know about ShouldProcess
-      href: learn/deep-dives/everything-about-shouldprocess.md
+    - name: Everything you want to know about ...
+      items:
+      - name: Everything you want to know about arrays
+        href: learn/deep-dives/everything-about-arrays.md
+      - name: Everything you want to know about hashtables
+        href: learn/deep-dives/everything-about-hashtable.md
+      - name: Everything you want to know about PSCustomObject
+        href: learn/deep-dives/everything-about-pscustomobject.md
+      - name: Everything you want to know about string substitution
+        href: learn/deep-dives/everything-about-string-substitutions.md
+      - name: Everything you want to know about if/then/else
+        href: learn/deep-dives/everything-about-if.md
+      - name: Everything you want to know about switch
+        href: learn/deep-dives/everything-about-switch.md
+      - name: Everything you want to know about exceptions
+        href: learn/deep-dives/everything-about-exceptions.md
+      - name: Everything you want to know about $null
+        href: learn/deep-dives/everything-about-null.md
+      - name: Everything you want to know about ShouldProcess
+        href: learn/deep-dives/everything-about-shouldprocess.md
     - name: Write-Progress while multithreading
       href: learn/deep-dives/write-progress-across-multiple-threads.md
+    - name: Add Credential support to PowerShell functions
+      href: learn/deep-dives/add-credentials-to-powershell-functions.md
+  - name: Sample scripts
+    items:
+    - name: Sample scripts for administration
+      href: samples/sample-scripts-for-administration.yml
+    - name: Working with objects
+      items:
+      - name: Viewing object structure - Get-Member
+        href: samples/viewing-object-structure--get-member-.md
+      - name: Selecting parts of object - Select-Object
+        href: samples/selecting-parts-of-objects--select-object-.md
+      - name: Removing objects from the pipeline - Where-Object
+        href: samples/removing-objects-from-the-pipeline--where-object-.md
+      - name: Sorting objects
+        href: samples/sorting-objects.md
+      - name: Repeating a task for multiple objects - ForEach-Object
+        href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
+      - name: Creating .NET and COM objects - New-Object
+        href: samples/creating-.net-and-com-objects--new-object-.md
+      - name: Using static classes and methods
+        href: samples/using-static-classes-and-methods.md
+      - name: Getting WMI objects - Get-CimInstance
+        href: samples/getting-wmi-objects--get-ciminstance-.md
+      - name: Manipulating items directly
+        href: samples/manipulating-items-directly.md
+    - name: Managing computers
+      items:
+      - name: Changing computer state
+        href: samples/changing-computer-state.md
+      - name: Collecting information about computers
+        href: samples/collecting-information-about-computers.md
+      - name: Creating Get-WinEvent queries with FilterHashtable
+        href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: Managing processes & services
+      items:
+      - name: Managing processes with process cmdlets
+        href: samples/managing-processes-with-process-cmdlets.md
+      - name: Managing services
+        href: samples/managing-services.md
+      - name: Managing PowerShell drives
+        href: samples/managing-windows-powershell-drives.md
+      - name: Working with printers
+        href: samples/working-with-printers.md
+      - name: Performing networking tasks
+        href: samples/performing-networking-tasks.md
+      - name: Working with software installations
+        href: samples/working-with-software-installations.md
+      - name: Decode a PowerShell command from a running process
+        href: samples/decode-powershell-command-from-a-running-process.md
+    - name: Working with output
+      items:
+      - name: Redirecting data with Out-* cmdlets
+        href: samples/redirecting-data-with-out---cmdlets.md
+      - name: Using format commands to change output view
+        href: samples/using-format-commands-to-change-output-view.md
+    - name: Manage drives & files
+      items:
+      - name: Managing current location
+        href: samples/managing-current-location.md
+      - name: Working with files and folders
+        href: samples/working-with-files-and-folders.md
+      - name: Working with files folders and registry keys
+        href: samples/working-with-files-folders-and-registry-keys.md
+      - name: Working with registry entries
+        href: samples/working-with-registry-entries.md
+      - name: Working with registry keys
+        href: samples/working-with-registry-keys.md
+    - name: Creating UI elements
+      items:
+      - name: Creating a custom input box
+        href: samples/creating-a-custom-input-box.md
+      - name: Creating a graphical date picker
+        href: samples/creating-a-graphical-date-picker.md
+      - name: Multiple selection list boxes
+        href: samples/multiple-selection-list-boxes.md
+      - name: Selecting items from a list box
+        href: samples/selecting-items-from-a-list-box.md
   - name: PowerShell remoting
     items:
     - name: Just Enough Administration (JEA)
@@ -105,10 +192,14 @@
       href: learn/remoting/winrmsecurity.md
     - name: Making the second hop in PowerShell Remoting
       href: learn/remoting/ps-remoting-second-hop.md
+    - name: PowerShell Remoting FAQ
+      href: learn/remoting/powershell-remoting-faq.yml
   - name: Using Experimental Features
     href: learn/experimental-features.md
   - name: Using tab expansion
     href: learn/using-tab-expansion.md
+  - name: Compatibility aliases
+    href: learn/compatibility-aliases.md
   - name: Additional resources
     href: learn/more-powershell-learning.md
   - name: Glossary
@@ -118,20 +209,16 @@
   items:
   - name: What's new in PowerShell 7.x
     items:
+    - name: What's new in PowerShell 7.1
+      href: whats-new/what-s-new-in-powershell-71.md
     - name: What's new in PowerShell 7.0
       href: whats-new/what-s-new-in-powershell-70.md
-  - name: What's new in PowerShell Core 6.x
-    items:
-    - name: What's new in PowerShell Core 6.2
-      href: whats-new/what-s-new-in-powershell-core-62.md
-    - name: What's new in PowerShell Core 6.1
-      href: whats-new/what-s-new-in-powershell-core-61.md
-    - name: What's new in PowerShell Core 6.0
-      href: whats-new/what-s-new-in-powershell-core-60.md
-    - name: Breaking changes in PowerShell Core 6.0
-      href: whats-new/breaking-changes-ps6.md
-    - name: Known issues in PowerShell Core 6.0
-      href: whats-new/known-issues-ps6.md
+  - name: Migrating from Windows PowerShell 5.1 to PowerShell 7
+    href: whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md
+  - name: Differences between Windows PowerShell 5.1 and PowerShell (core) 7.x
+    href: whats-new/differences-from-windows-powershell.md
+  - name: PowerShell differences on non-Windows platforms
+    href: whats-new/unix-support.md
   - name: Module and cmdlet release history
     href: whats-new/cmdlet-versions.md
   - name: Module compatibility list
@@ -146,6 +233,8 @@
       href: windows-powershell/install/installing-the-windows-powershell-2.0-engine.md
     - name: Windows PowerShell System Requirements
       href: windows-powershell/install/windows-powershell-system-requirements.md
+    - name: Creating a custom PowerShell shortcut
+      href: windows-powershell/install/creating-a-custom-powershell-shortcut.md
   - name: What's new in PowerShell 5.x
     items:
     - name: What's new in Windows PowerShell 5.x
@@ -208,6 +297,8 @@
         href: windows-powershell/ise/object-model/the-powershelltabcollection-object.md
       - name: The PowerShellTab object
         href: windows-powershell/ise/object-model/the-powershelltab-object.md
+      - name: Other useful scripting objects
+        href: windows-powershell/ise/object-model/other-useful-scripting-objects.md
   - name: Windows Management Framework (WMF)
     items:
     - name: Overview
@@ -564,12 +655,10 @@
     href: community/hall-of-fame.md
   - name: What's new in Docs
     items:
-    - name: 2020-Q3
-      href: community/2020-Q3.md
-    - name: 2020-Q2
-      href: community/2020-Q2.md
-    - name: 2020-Q1
-      href: community/2020-Q1.md
+    - name: 2021 Updates
+      href: community/2021-updates.md
+    - name: 2020 Updates
+      href: community/2020-updates.md
   - name: Contributor's Guide
     items:
     - name: Overview
@@ -582,102 +671,14 @@
       href: community/contributing/pull-requests.md
     - name: PowerShell-Docs style guide
       href: community/contributing/powershell-style-guide.md
-    - name: Editing cmdlet reference
-      href: community/contributing/editing-cmdlet-ref.md
-    - name: Additional resources
-      items:
-      - name: Editorial checklist
-        href: community/contributing/editorial-checklist.md
-      - name: How we manage issues
-        href: community/contributing/managing-issues.md
-      - name: How we manage pull requests
-        href: community/contributing/managing-pull-requests.md
+    - name: Editorial checklist
+      href: community/contributing/editorial-checklist.md
+    - name: How we manage issues
+      href: community/contributing/managing-issues.md
+    - name: How we manage pull requests
+      href: community/contributing/managing-pull-requests.md
   - name: Digital art
     href: community/digital-art.md
-- name: Sample scripts
-  items:
-  - name: Sample scripts for administration
-    href: samples/sample-scripts-for-administration.yml
-  - name: Working with objects
-    items:
-    - name: Viewing object structure - Get-Member
-      href: samples/viewing-object-structure--get-member-.md
-    - name: Selecting parts of object - Select-Object
-      href: samples/selecting-parts-of-objects--select-object-.md
-    - name: Removing objects from the pipeline - Where-Object
-      href: samples/removing-objects-from-the-pipeline--where-object-.md
-    - name: Sorting objects
-      href: samples/sorting-objects.md
-    - name: Repeating a task for multiple objects - ForEach-Object
-      href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
-    - name: Creating .NET and COM objects - New-Object
-      href: samples/creating-.net-and-com-objects--new-object-.md
-    - name: Using static classes and methods
-      href: samples/using-static-classes-and-methods.md
-    - name: Getting WMI objects - Get-CimInstance
-      href: samples/getting-wmi-objects--get-ciminstance-.md
-  - name: Managing computers
-    items:
-    - name: Changing computer state
-      href: samples/changing-computer-state.md
-    - name: Collecting information about computers
-      href: samples/collecting-information-about-computers.md
-    - name: Creating Get-WinEvent queries with FilterHashtable
-      href: samples/creating-get-winEvent-queries-with-filterhashtable.md
-  - name: Managing processes & services
-    items:
-    - name: Managing processes with process cmdlets
-      href: samples/managing-processes-with-process-cmdlets.md
-    - name: Managing services
-      href: samples/managing-services.md
-    - name: Managing PowerShell drives
-      href: samples/managing-windows-powershell-drives.md
-    - name: Working with printers
-      href: samples/working-with-printers.md
-    - name: Performing networking tasks
-      href: samples/performing-networking-tasks.md
-    - name: Working with software installations
-      href: samples/working-with-software-installations.md
-    - name: Decode a PowerShell command from a running process
-      href: samples/decode-powershell-command-from-a-running-process.md
-  - name: Working with output
-    items:
-    - name: Redirecting data with Out-* cmdlets
-      href: samples/redirecting-data-with-out---cmdlets.md
-    - name: Using format commands to change output view
-      href: samples/using-format-commands-to-change-output-view.md
-  - name: Manage drives & files
-    items:
-    - name: Managing current location
-      href: samples/managing-current-location.md
-    - name: Working with files and folders
-      href: samples/working-with-files-and-folders.md
-    - name: Working with files folders and registry keys
-      href: samples/working-with-files-folders-and-registry-keys.md
-    - name: Working with registry entries
-      href: samples/working-with-registry-entries.md
-    - name: Working with registry keys
-      href: samples/working-with-registry-keys.md
-  - name: Creating UI elements
-    items:
-    - name: Creating a custom input box
-      href: samples/creating-a-custom-input-box.md
-    - name: Creating a graphical date picker
-      href: samples/creating-a-graphical-date-picker.md
-    - name: Multiple selection list boxes
-      href: samples/multiple-selection-list-boxes.md
-    - name: Selecting items from a list box
-      href: samples/selecting-items-from-a-list-box.md
-  - name: Other examples
-    items:
-    - name: Manipulating items directly
-      href: samples/manipulating-items-directly.md
-    - name: Other useful scripting objects
-      href: samples/other-useful-scripting-objects.md
-    - name: Appendix 1 Compatibility aliases
-      href: samples/appendix-1---compatibility-aliases.md
-    - name: Appendix 2 Creating a custom powershell shortcut
-      href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
 - name: PowerShell Gallery
   items:
   - name: Overview
@@ -720,8 +721,6 @@
         href: gallery/how-to/working-with-packages/packages-that-require-license-acceptance.md
       - name: Contacting Packages owners
         href: gallery/how-to/working-with-packages/contacting-package-owners.md
-      - name: Providing Feedback via Social Media or Comments
-        href: gallery/how-to/working-with-packages/social-media-feedback.md
     - name: Managing Account Profile
       items:
       - name: PowerShell Gallery Account Settings
@@ -771,19 +770,27 @@
     - name: GDPR Compliance
       href: gallery/how-to/getting-support/gdpr-dsr-policy.md
   - name: Gallery FAQs
-    href: gallery/faqs.md
+    href: gallery/faqs.yml
 - name: Scripting and development
   items:
   - name: Visual Studio Code
     items:
     - name: Using Visual Studio Code
       href: dev-cross-plat/vscode/using-vscode.md
-    - name: How to replicate the ISE experience in Visual Studio Code
+    - name: How to replicate the ISE experience in VS Code
       href: dev-cross-plat/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
-    - name: Using Visual Studio Code for remote editing and debugging
+    - name: Using VS Code for remote editing and debugging
       href: dev-cross-plat/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
     - name: Understanding file encoding in VS Code and PowerShell
       href: dev-cross-plat/vscode/understanding-file-encoding.md
+    - name: Using VS Code to debug compiled cmdlets
+      href: dev-cross-plat/vscode/using-vscode-for-debugging-compiled-cmdlets.md
+  - name: Performance considerations
+    items:
+    - name: Scripting performance considerations
+      href: dev-cross-plat/performance/script-authoring-considerations.md
+    - name: Module performance considerations
+      href: dev-cross-plat/performance/module-authoring-considerations.md
   - name: Writing portable modules
     href: dev-cross-plat/writing-portable-modules.md
   - name: Creating module help using PlatyPS
@@ -794,6 +801,40 @@
     href: dev-cross-plat/choosing-the-right-nuget-package.md
   - name: Resolving module assembly dependency conflicts
     href: dev-cross-plat/resolving-dependency-conflicts.md
+  - name: PowerShell Language Specification 3.0
+    items:
+    - name: 1. Introduction
+      href: lang-spec/chapter-01.md
+    - name: 2. Lexical Structure
+      href: lang-spec/chapter-02.md
+    - name: 3. Basic concepts
+      href: lang-spec/chapter-03.md
+    - name: 4. Types
+      href: lang-spec/chapter-04.md
+    - name: 5. Variables
+      href: lang-spec/chapter-05.md
+    - name: 6. Conversions
+      href: lang-spec/chapter-06.md
+    - name: 7. Expressions
+      href: lang-spec/chapter-07.md
+    - name: 8. Statements
+      href: lang-spec/chapter-08.md
+    - name: 9. Arrays
+      href: lang-spec/chapter-09.md
+    - name: 10. Hashtables
+      href: lang-spec/chapter-10.md
+    - name: 11. Modules
+      href: lang-spec/chapter-11.md
+    - name: 12. Attributes
+      href: lang-spec/chapter-12.md
+    - name: 13. Cmdlets
+      href: lang-spec/chapter-13.md
+    - name: A. Comment-Based Help
+      href: lang-spec/chapter-14.md
+    - name: B. Grammar
+      href: lang-spec/chapter-15.md
+    - name: C. References
+      href: lang-spec/chapter-16.md
   - name: Legacy PowerShell SDK
     items:
     - name: Overview

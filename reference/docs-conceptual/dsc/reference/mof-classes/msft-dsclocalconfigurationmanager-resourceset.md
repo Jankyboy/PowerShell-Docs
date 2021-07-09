@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  ResourceSet method
+ms.topic: reference
+title: ResourceSet method
+description: ResourceSet method
 ---
 # ResourceSet method
 
@@ -11,10 +12,10 @@ Directly calls the **Set** method of a DSC resource.
 
 ```mof
 uint32 ResourceSet(
-  [in]  string  ResourceType,
-  [in]  string  ModuleName,
-  [in]  uint8   resourceProperty[],
-  [out] boolean RebootRequired
+  [in]  string  ResourceType,
+  [in]  string  ModuleName,
+  [in]  uint8   resourceProperty[],
+  [out] boolean RebootRequired
 );
 ```
 

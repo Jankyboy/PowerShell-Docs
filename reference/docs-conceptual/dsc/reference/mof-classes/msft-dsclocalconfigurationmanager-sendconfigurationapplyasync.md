@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  SendConfigurationApplyAsync method
+ms.topic: reference
+title: SendConfigurationApplyAsync method
+description: SendConfigurationApplyAsync method
 ---
 # SendConfigurationApplyAsync method
 
@@ -12,9 +13,9 @@ to apply the configuration.
 
 ```mof
 uint32 SendConfigurationApplyAsync(
-  [in] uint8   ConfigurationData[],
-  [in] boolean force,
-  [in] string  jobId
+  [in] uint8   ConfigurationData[],
+  [in] boolean force,
+  [in] string  jobId
 );
 ```
 

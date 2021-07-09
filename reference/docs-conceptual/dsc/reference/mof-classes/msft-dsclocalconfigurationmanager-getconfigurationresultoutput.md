@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  GetConfigurationResultOutput method
+ms.topic: reference
+title: GetConfigurationResultOutput method
+description: GetConfigurationResultOutput method
 ---
 # GetConfigurationResultOutput method
 
@@ -11,9 +12,9 @@ Gets the Configuration Agent output associated with a specific job.
 
 ```mof
 uint32 GetConfigurationResultOutput(
-  [in]  string                      jobId,
-  [in]  uint8                       resumeOutputBookmark[],
-  [out] MSFT_DSCConfigurationOutput output[]
+  [in]  string                      jobId,
+  [in]  uint8                       resumeOutputBookmark[],
+  [out] MSFT_DSCConfigurationOutput output[]
 );
 ```
 

@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  TestConfiguration method
+ms.topic: reference
+title: TestConfiguration method
+description: TestConfiguration method
 ---
 # TestConfiguration method
 
@@ -11,10 +12,10 @@ Sends the configuration document to the managed node and verifies the current co
 
 ```mof
 uint32 TestConfiguration(
-  [in]  uint8                          configurationData[],
-  [out] boolean                        InDesiredState,
-  [out] MSFT_ResourceInDesiredState    ResourcesInDesiredState[],
-  [out] MSFT_ResourceNotInDesiredState ResourcesNotInDesiredState[]
+  [in]  uint8                          configurationData[],
+  [out] boolean                        InDesiredState,
+  [out] MSFT_ResourceInDesiredState    ResourcesInDesiredState[],
+  [out] MSFT_ResourceNotInDesiredState ResourcesNotInDesiredState[]
 );
 ```
 

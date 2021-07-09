@@ -2,7 +2,6 @@
 title: Getting Started with PowerShell
 description: Where to find and how to launch PowerShell for new users.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ---
@@ -74,7 +73,7 @@ At line:1 char:29
 ```
 
 The solution to this problem is to run PowerShell as a domain user who is a local administrator.
-This is how my second domain user account is configured. Using the principal of least privilege,
+This is how my second domain user account is configured. Using the principle of least privilege,
 this account should NOT be a domain administrator, or have any elevated privileges in the domain.
 
 Close PowerShell. Relaunch the PowerShell console, except this time right-click on the **Windows

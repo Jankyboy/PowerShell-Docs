@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  RollBack method
+ms.topic: reference
+title: RollBack method
+description: RollBack method
 ---
 # RollBack method
 
@@ -11,7 +12,7 @@ Rolls back the configuration to a previous version.
 
 ```mof
 uint32 RollBack(
-  [in] uint8 configurationNumber
+  [in] uint8 configurationNumber
 );
 ```
 

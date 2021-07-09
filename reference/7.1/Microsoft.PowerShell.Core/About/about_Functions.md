@@ -1,13 +1,14 @@
 ---
+description: Describes how to create and use functions in PowerShell.
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 2/27/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Functions
+title: about Functions
 ---
 
-# About Functions
+# about_Functions
 
 ## Short description
 
@@ -601,9 +602,9 @@ methods:
   return only auto-generated help.
 
   For more information about the `ExternalHelp` keyword, see
-  [about_Comment_Based_Help](about_Comment_Based_Help.md). For more
-  information about XML-based help, see [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)
-  in the MSDN library.
+  [about_Comment_Based_Help](about_Comment_Based_Help.md). For more information
+  about XML-based help, see
+  [How to Write Cmdlet Help](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets).
 
 ## See also
 
@@ -630,4 +631,3 @@ methods:
 [about_Script_Blocks](about_Script_Blocks.md)
 
 [about_Function_provider](about_Function_provider.md)
-

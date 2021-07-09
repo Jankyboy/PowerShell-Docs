@@ -1,7 +1,7 @@
 ---
 title: Everything you wanted to know about PSCustomObject
 description: PSCustomObject is a simple way to create structured data.
-ms.date: 07/29/2020
+ms.date: 10/05/2020
 ms.custom: contributor-KevinMarquette
 ---
 # Everything you wanted to know about PSCustomObject
@@ -81,7 +81,7 @@ I find the best way to save a hashtable to a file is to save it as JSON. You can
 a `[PSCustomObject]`
 
 ```powershell
-$myObject | ConvertTo-Json -depth 1- | Set-Content -Path $Path
+$myObject | ConvertTo-Json -depth 1 | Set-Content -Path $Path
 $myObject = Get-Content -Path $Path | ConvertFrom-Json
 ```
 
@@ -95,7 +95,7 @@ I cover more ways to save objects to a file in my article on
 You can still add new properties to your `PSCustomObject` with `Add-Member`.
 
 ```powershell
-$myObject | Add-Member -MemberType NoteProperty -Name `ID` -Value 'KevinMarquette'
+$myObject | Add-Member -MemberType NoteProperty -Name 'ID' -Value 'KevinMarquette'
 
 $myObject.ID
 ```
@@ -108,7 +108,9 @@ You can also remove properties off of an object.
 $myObject.psobject.properties.remove('ID')
 ```
 
-The `psobject` is a hidden property that gives you access to base object metadata.
+The `.psobject` is an intrinsic member that gives you access to base object metadata. For more
+information about intrinsic members, see [about_Inrinsic_Members](/powershell/module/microsoft.powershell.core/about/about_intrinsic_members).
++
 
 ### Enumerating property names
 
@@ -147,7 +149,7 @@ $myObject.$property
 
 I know that looks strange, but it works.
 
-### Convert PSCustombObject into a hashtable
+### Convert PSCustomObject into a hashtable
 
 To continue on from the last section, you can dynamically walk the properties and create a hashtable
 from them.
@@ -168,11 +170,11 @@ If you need to know if a property exists, you could just check for that property
 if( $null -ne $myObject.ID )
 ```
 
-But if the value could be `$null` and you still need to check for it, you can check the
+But if the value could be `$null` you can check to see if it exists by checking the
 `psobject.properties` for it.
 
 ```powershell
-if( $myobject.psobject.properties.match('ID') )
+if( $myobject.psobject.properties.match('ID').Count )
 ```
 
 ## Adding object methods
@@ -290,7 +292,7 @@ there's another way for us to do this on our custom object using just PowerShell
 
 ```powershell
 $defaultDisplaySet = 'Name','Language'
-$defaultDisplayPropertySet = New-Object System.Management.Automation.PSPropertySet(‘DefaultDisplayPropertySet’,[string[]]$defaultDisplaySet)
+$defaultDisplayPropertySet = New-Object System.Management.Automation.PSPropertySet('DefaultDisplayPropertySet',[string[]]$defaultDisplaySet)
 $PSStandardMembers = [System.Management.Automation.PSMemberInfo[]]@($defaultDisplayPropertySet)
 $MyObject | Add-Member MemberSet PSStandardMembers $PSStandardMembers
 ```
@@ -399,7 +401,7 @@ something and can find a way to work this into your scripts.
 [about_Functions_OutputTypeAttribute]: /powershell/module/microsoft.powershell.core/about/about_functions_outputtypeattribute
 [The many ways to read and write to files]: https://powershellexplained.com/2017-03-18-Powershell-reading-and-saving-data-to-files
 [post by /u/markekraus]: https://www.reddit.com/r/PowerShell/comments/590awc/is_it_possible_to_initialize_a_pscustoobject_with/
-[Adam Bertram]: http://www.adamtheautomator.com/building-custom-object-types-PowerShell-pstypename/
+[Adam Bertram]: http://www.adamtheautomator.com/
 [Mike Shepard]: https://powershellstation.com/2016/05/22/custom-objects-and-pstypename/
 [psunplugged]: https://www.youtube.com/watch?v=Ab46gHXNm8Q
 [Update-TypeData]: /powershell/module/microsoft.powershell.utility/update-typedata

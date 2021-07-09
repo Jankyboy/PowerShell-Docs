@@ -1,7 +1,6 @@
 ---
-Download Help Link: https://go.microsoft.com/fwlink/?linkid=2113630
+Download Help Link: https://aka.ms/powershell70-help
 Help Version: 7.0.1.0
-keywords: powershell
 Locale: en-US
 Module Guid: 5714753b-2afd-4492-a5fd-01d9e2cff8b5
 Module Name: PSReadLine
@@ -15,7 +14,7 @@ title: PSReadLine
 ## Description
 
 The PSReadLine module contains cmdlets that let you customize the command-line editing environment
-in PowerShell. These articles documents PSReadLine v2.0. This version ships in PowerShell v6 and
+in PowerShell. These articles document PSReadLine v2.0. This version ships in PowerShell v6 and
 the Windows 10 October 2018 Update (Build 1809).
 
 > [!NOTE]
@@ -34,9 +33,9 @@ The main entry point for PSReadLine.
 Gets the key bindings for the PSReadLine module.
 
 ### [Get-PSReadLineOption](Get-PSReadLineOption.md)
-Returns the values for the options that can be configured.
+Gets values for the options that can be configured.
 
-### [PSConsoleHostReadline](PSConsoleHostReadline.md)
+### [PSConsoleHostReadLine](PSConsoleHostReadLine.md)
 This function is the main entry point for PSReadLine.
 
 ### [Remove-PSReadLineKeyHandler](Remove-PSReadLineKeyHandler.md)
@@ -46,4 +45,5 @@ Removes a key binding.
 Binds keys to user-defined or PSReadLine key handler functions.
 
 ### [Set-PSReadLineOption](Set-PSReadLineOption.md)
-Customizes the behavior of command line editing in PSReadLine.
+Customizes the behavior of command line editing in **PSReadLine**.
+

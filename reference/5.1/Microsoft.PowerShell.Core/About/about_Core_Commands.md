@@ -1,13 +1,14 @@
 ---
+description:  Lists the cmdlets that are designed for use with PowerShell providers. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_core_commands?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Core_Commands
+title: about Core Commands
 ---
 
-# About Core Commands
+# about_Core_Commands
 
 ## SHORT DESCRIPTION
 

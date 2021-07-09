@@ -1,12 +1,13 @@
 ---
+description: Describes how to access Windows environment variables in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 08/20/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 09/22/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Environment_Variables
+title: about Environment Variables
 ---
-# About Environment Variables
+# about_Environment_Variables
 
 ## SHORT DESCRIPTION
 Describes how to access Windows environment variables in PowerShell.
@@ -61,7 +62,8 @@ $Env:windir
 ```
 
 In this syntax, the dollar sign (`$`) indicates a variable, and the drive name
-indicates an environment variable.
+(`Env:`) indicates an environment variable followed by the variable name
+(`windir`).
 
 When you change environment variables in PowerShell, the change affects only
 the current session. This behavior resembles the behavior of the `Set` command
@@ -143,7 +145,7 @@ The environment variables that store preferences include:
   - Non-Windows default: `~/.cache/powershell`
 
   The default filename for the cache is `ModuleAnalysisCache`. When you have
-  multiple instances of PowerShell installed, the filename will include a
+  multiple instances of PowerShell installed, the filename includes a
   hexadecimal suffix so that there is a a unique filename per installation.
 
   > [!NOTE]

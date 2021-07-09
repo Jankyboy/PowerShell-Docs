@@ -1,13 +1,13 @@
 ---
-keywords: powershell,cmdlet
+description: Describes how variables store values that can be used in PowerShell.
 Locale: en-US
-ms.date: 03/19/2020
+ms.date: 03/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Variables
+title: about Variables
 ---
 
-# About Variables
+# about_Variables
 
 ## Short description
 
@@ -153,6 +153,23 @@ Remove-Variable -Name MyVariable
 Remove-Item -Path Variable:\MyVariable
 ```
 
+It is also possible to values to multiple variables with one statement. The
+following examples assigns the same value to multiple variables:
+
+```powershell
+$a = $b = $c = 0
+```
+
+The next example assigns multiple values to multiple variables.
+
+```powershell
+$i,$j,$k = 10, "red", $true    # $i is 10, $j is "red", $k is True
+$i,$j = 10, "red", $true       # $i is 10, $j is [object[]], Length 2
+```
+
+For more detailed information, see the **Assigning multiple variables** section
+of [about_Assignment_Operators](about_assignment_operators.md#assigning-multiple-variables).
+
 ## Types of variables
 
 You can store any type of object in a variable, including integers, strings,
@@ -164,7 +181,8 @@ a particular type of object. A single variable can even contain a collection,
 or array, of different types of objects at the same time.
 
 The data type of a variable is determined by the .NET types of the values of
-the variable. To view a variable's object type, use [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member).
+the variable. To view a variable's object type, use
+[Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member).
 
 For example:
 
@@ -245,7 +263,8 @@ used in the command or expression.
 If the variable name and dollar sign are enclosed in single quotation (`'`)
 marks, the variable name is used in the expression.
 
-For more information about using quotation marks in PowerShell, see [about_Quoting_Rules](about_Quoting_Rules.md).
+For more information about using quotation marks in PowerShell, see
+[about_Quoting_Rules](about_Quoting_Rules.md).
 
 This example gets the value of the `$PROFILE` variable, which is the path to
 the PowerShell user profile file in the PowerShell console.
@@ -327,7 +346,8 @@ Special character variable names can contain these characters:
     Unicode characters so they're treated as literals.
 
 PowerShell has reserved variables such as `$$`, `$?`, `$^`, and `$_` that
-contain alphanumeric and special characters. For more information, see [about_Automatic_Variables](about_automatic_variables.md).
+contain alphanumeric and special characters. For more information, see
+[about_Automatic_Variables](about_automatic_variables.md).
 
 For example, the following command creates the variable named `save-items`. The
 curly braces (`{}`) are needed because variable name includes a hyphen (`-`)

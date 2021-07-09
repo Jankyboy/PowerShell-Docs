@@ -1,13 +1,14 @@
 ---
+description:  Explains how to add parameters to advanced functions.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 09/02/2020
+ms.date: 04/14/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Functions_Advanced_Parameters
+title: about Functions Advanced Parameters
 ---
 
-# About Functions Advanced Parameters
+# about_Functions_Advanced_Parameters
 
 ## Short description
 
@@ -422,7 +423,6 @@ If there is no other [comment-based help](./about_comment_based_help.md) syntax
 for the function (for example, `.SYNOPSIS`) then this message also shows up in
 `Get-Help` output.
 
-
 ```powershell
 Param(
     [Parameter(Mandatory=$true,
@@ -448,6 +448,26 @@ Param(
     $ComputerName
 )
 ```
+
+### SupportsWildcards attribute
+
+The **SupportsWildcards** attribute is used to indicate that the parameter
+accepts wildcard values. The following example shows a parameter declaration
+for a mandatory **Path** parameter that supports wildcard values.
+
+```powershell
+Param(
+    [Parameter(Mandatory=$true)]
+    [SupportsWildcards()]
+    [String[]]
+    $Path
+)
+```
+
+Using this attribute does not automatically enable wildcard support. The cmdlet
+developer must implement the code to handle the wildcard input. The wildcards
+supported can vary according to the underlying API or PowerShell provider. For
+more information, see [about_Wildcards](about_Wildcards.md).
 
 ### Parameter and variable validation attributes
 
@@ -732,6 +752,9 @@ Param(
 )
 ```
 
+> [!NOTE]
+> The `IValidateSetValuesGenerator` class was introduced in PowerShell 6.0
+
 ### ValidateNotNull validation attribute
 
 The **ValidateNotNull** attribute specifies that the parameter value can't be
@@ -790,27 +813,64 @@ Param(
 
 The **ValidateUserDrive** attribute specifies that the parameter value must
 represent the path, that is referring to `User` drive. PowerShell generates an
-error if the path refers to other drives. Existence of the path, except for the
-drive itself, isn't verified.
+error if the path refers to a different drive. The validation attribute only
+tests for the existence of the drive portion of the path.
 
 If you use relative path, the current drive must be `User`.
 
-You can define `User` drive in Just Enough Administration (JEA) session
-configurations.
+```powershell
+function Test-UserDrivePath{
+    [OutputType([bool])]
+    Param(
+      [Parameter(Mandatory=, Position=0)][ValidateUserDrive()][String]$Path
+      )
+    $True
+}
+
+Test-UserDrivePath -Path C:\
+```
+
+```Output
+Test-UserDrivePath: Cannot validate argument on parameter 'Path'. The path
+argument drive C does not belong to the set of approved drives: User.
+Supply a path argument with an approved drive.
+```
 
 ```powershell
-Param(
-    [ValidateUserDrive()]
-    [String]$Path
-)
+Test-UserDrivePath -Path 'User:\A_folder_that_does_not_exist'
+```
+
+```Output
+Test-UserDrivePath: Cannot validate argument on parameter 'Path'. Cannot
+find drive. A drive with the name 'User' does not exist.
+```
+
+You can define `User` drive in Just Enough Administration (JEA) session
+configurations. For this example, we create the User: drive.
+
+```powershell
+New-PSDrive -Name 'User' -PSProvider FileSystem -Root $env:HOMEPATH
+```
+
+```Output
+Name           Used (GB)     Free (GB) Provider      Root
+----           ---------     --------- --------      ----
+User               75.76         24.24 FileSystem    C:\Users\ExampleUser
+
+```powershell
+Test-UserDrivePath -Path 'User:\A_folder_that_does_not_exist'
+```
+
+```Output
+True
 ```
 
 ### ValidateTrustedData validation attribute
 
 This attribute was added in PowerShell 6.1.1.
 
-At this time, the attribute is used internally by PowerShell itself and is not intended for external
-usage.
+At this time, the attribute is used internally by PowerShell itself and is not
+intended for external usage.
 
 ## Dynamic parameters
 

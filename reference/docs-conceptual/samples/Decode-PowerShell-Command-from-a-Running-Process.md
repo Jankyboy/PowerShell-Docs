@@ -3,6 +3,7 @@ ms.date:  11/13/2018
 keywords:  powershell,cmdlet
 title:  Decode a PowerShell command from a running process
 author: randomnote1
+description: This article shows how to decode a script block that a PowerShell process is currently running.
 ---
 
 # Decode a PowerShell command from a running process
@@ -80,15 +81,15 @@ $commandDetails | ForEach-Object -Process {
 
     # Add the decoded command back to the object
     $commandDetails |
-        Where-Object -FilterScript { $_.ProcessId -eq $_.ProcessId } |
+        Where-Object -FilterScript { $_.ProcessId -eq $currentProcess.processId } |
         Add-Member -MemberType NoteProperty -Name DecodedCommand -Value $decodedCommand
 }
-$commandDetails[0]
+$commandDetails[0] | Format-List -Property *
 ```
 
 The decoded command can now be reviewed by selecting the decoded command property.
 
-```output
+```Output
 ProcessId      : 8752
 EncodedCommand : IAAKAAoACgAgAAoAIAAgACAAIAAkAGkAIAA9ACAAMQAgAAoACgAKACAACgAgACAAIAAgAHcAaABpAGwAZQAgACgAIAAkAGkAIAAtAG
                  wAZQAgADEAMAAgACkAIAAKAAoACgAgAAoAIAAgACAAIAB7ACAACgAKAAoAIAAKACAAIAAgACAAIAAgACAAIABXAHIAaQB0AGUALQBP

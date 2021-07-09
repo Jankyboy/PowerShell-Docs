@@ -1,11 +1,10 @@
 ---
-Download Help Link: https://go.microsoft.com/fwlink/?linkid=2113633
+Download Help Link: https://aka.ms/powershell70-help
 Help Version: 7.0.1.0
-keywords: powershell,cmdlet
 Locale: en-US
 Module Guid: 1da87e53-152b-403e-98dc-74d7b4d63d59
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 04/02/2021
 schema: 2.0.0
 title: Microsoft.PowerShell.Utility
 ---
@@ -23,7 +22,7 @@ PowerShell.
 Adds custom properties and methods to an instance of a PowerShell object.
 
 ### [Add-Type](Add-Type.md)
-Adds a Microsoft .NET Core class to a PowerShell session.
+Adds a Microsoft .NET class to a PowerShell session.
 
 ### [Clear-Variable](Clear-Variable.md)
 Deletes the value of a variable.
@@ -47,10 +46,10 @@ Converts a SDDL string to a custom object.
 Converts a string containing one or more key and value pairs to a hash table.
 
 ### [ConvertTo-Csv](ConvertTo-Csv.md)
-Converts objects into a series of character-separated value (CSV) strings.
+Converts .NET objects into a series of character-separated value (CSV) strings.
 
 ### [ConvertTo-Html](ConvertTo-Html.md)
-Converts Microsoft .NET Framework objects into HTML that can be displayed in a Web browser.
+Converts .NET objects into HTML that can be displayed in a Web browser.
 
 ### [ConvertTo-Json](ConvertTo-Json.md)
 Converts an object to a JSON-formatted string.
@@ -146,7 +145,7 @@ Displays the current call stack.
 Gets a random number, or selects objects randomly from a collection.
 
 ### [Get-Runspace](Get-Runspace.md)
-Gets active runspaces within a PowerShellhost process.
+Gets active runspaces within a PowerShell host process.
 
 ### [Get-RunspaceDebug](Get-RunspaceDebug.md)
 Shows runspace debugging options.
@@ -242,7 +241,7 @@ Sends output to an interactive table in a separate window.
 Sends output to a printer.
 
 ### [Out-String](Out-String.md)
-Sends objects to the host as a series of strings.
+Outputs input objects as a strings.
 
 ### [Read-Host](Read-Host.md)
 Reads a line of input from the console.

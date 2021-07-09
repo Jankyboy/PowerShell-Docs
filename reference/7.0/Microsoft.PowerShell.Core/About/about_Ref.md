@@ -1,12 +1,13 @@
 ---
+description: Describes how to create and use a reference type variable. You can use reference type variables to permit a function to change the value of a variable that is passed to it. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 08/24/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_ref?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Ref
+title: about Ref
 ---
-# About Ref
+# about_Ref
 
 ## Short description
 Describes how to create and use a reference type variable. You can use

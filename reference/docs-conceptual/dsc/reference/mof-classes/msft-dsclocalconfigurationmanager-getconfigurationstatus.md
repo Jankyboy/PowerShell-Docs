@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  GetConfigurationStatus method
+ms.topic: reference
+title: GetConfigurationStatus method
+description: GetConfigurationStatus method
 ---
 # GetConfigurationStatus method
 
@@ -11,8 +12,8 @@ Get the configuration status history.
 
 ```mof
 uint32 GetConfigurationStatus(
-  [in]  boolean                     All,
-  [out] MSFT_DSCConfigurationStatus configurationStatus[]
+  [in]  boolean                     All,
+  [out] MSFT_DSCConfigurationStatus configurationStatus[]
 );
 ```
 

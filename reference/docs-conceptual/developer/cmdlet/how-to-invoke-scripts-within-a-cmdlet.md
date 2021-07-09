@@ -1,6 +1,8 @@
 ---
-title: "How to Invoke Scripts Within a Cmdlet | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Invoke Scripts Within a Cmdlet
+description: How to Invoke Scripts Within a Cmdlet
 ---
 # How to Invoke Scripts Within a Cmdlet
 
@@ -26,7 +28,7 @@ This example shows how to invoke a script that is supplied to a cmdlet. The scri
 
 2. Then, the script iterates through the returned collection of [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects and perform the necessary operations.
 
-    ```c
+    ```csharp
     foreach (PSObject psObject in psObjects)
     {
       if (LanguagePrimitives.IsTrue(psObject))

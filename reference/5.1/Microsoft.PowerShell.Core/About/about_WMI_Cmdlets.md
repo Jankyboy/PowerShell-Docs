@@ -1,13 +1,14 @@
 ---
+description:  Provides background information about Windows Management Instrumentation (WMI) and Windows PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 12/01/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wmi_cmdlets?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_WMI_Cmdlets
+title: about WMI Cmdlets
 ---
 
-# About WMI Cmdlets
+# about_WMI_Cmdlets
 
 ## SHORT DESCRIPTION
 

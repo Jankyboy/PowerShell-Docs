@@ -2,7 +2,6 @@
 title: PowerShell remoting
 description: There are many different ways to run commands against remote computers in PowerShell.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ---
@@ -378,15 +377,15 @@ multiple commands against the same remote computer.
 ## Recommended Reading
 
 - [about_Remote][]
-- [about_Remote_FAQ][]
 - [about_Remote_Output][]
 - [about_Remote_Requirements][]
 - [about_Remote_Troubleshooting][]
 - [about_Remote_Variables][]
+- [PowerShell Remoting FAQ][]
 
 <!-- link references -->
+[PowerShell Remoting FAQ]: ../remoting/powershell-remoting-faq.yml
 [about_Remote]: /powershell/module/microsoft.powershell.core/about/about_remote
-[about_Remote_FAQ]: /powershell/module/microsoft.powershell.core/about/about_remote_faq
 [about_Remote_Output]: /powershell/module/microsoft.powershell.core/about/about_remote_output
 [about_Remote_Requirements]: /powershell/module/microsoft.powershell.core/about/about_remote_requirements
 [about_Remote_Troubleshooting]: /powershell/module/microsoft.powershell.core/about/about_remote_troubleshooting

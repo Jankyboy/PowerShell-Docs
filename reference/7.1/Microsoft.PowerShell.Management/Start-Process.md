@@ -1,9 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/03/2020
+ms.date: 06/11/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
@@ -128,16 +127,39 @@ Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%systemdrive%\pro
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%systemdrive%\program files`""
 ```
 
+### Example 8: Create a detached process on Linux
+
+On Windows, `Start-Process` creates an independent process that remains running independently of the
+launching shell. On non-Windows platforms, the newly started process is attached to the shell that
+launched. If the launching shell is closed, the child process is terminated.
+
+To avoid terminating the child process on Unix-like platforms, you can combine `Start-Process` with
+`nohup`. The following example launches a background instance of PowerShell on Linux that stays
+alive even after you close the launching session. The `nohup` command collects output in file
+`nohup.out` in the current directory.
+
+```powershell
+# Runs for 2 minutes and appends output to ./nohup.out
+Start-Process nohup 'pwsh -noprofile -c "1..120 | % { Write-Host . -NoNewline; sleep 1 }"'
+```
+
+In this example, `Start-Process` is running the Linux `nohup` command, which launches `pwsh` as a
+detached process. For more information, see the man page for
+[nohup](https://linux.die.net/man/1/nohup).
+
 ## PARAMETERS
 
 ### -ArgumentList
 
 Specifies parameters or parameter values to use when this cmdlet starts the process. Arguments can
 be accepted as a single string with the arguments separated by spaces, or as an array of strings
-separated by commas.
+separated by commas. The cmdlet joins the array into a single string with each element of the array
+separated by a single space.
 
-If parameters or parameter values contain a space, they need to be surrounded with escaped double
-quotes. For more information, see [about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md).
+The outer quotes of the PowerShell strings are not included when the **ArgumentList** values are
+passed to the new process. If parameters or parameter values contain a space or quotes, they need to
+be surrounded with escaped double quotes. For more information, see
+[about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]
@@ -401,9 +423,8 @@ Accept wildcard characters: False
 ### -WorkingDirectory
 
 Specifies the location that the new process should start in. The default is the location of the
-executable file or document being started. The path provided is treated as a literal path. Wildcards
-are not supported. You must enclose the path in single quotes (`'`) if the path name contains
-characters that would be interpreted as wildcards.
+executable file or document being started. Wildcards are not supported. The path name must not
+contain characters that would be interpreted as wildcards.
 
 ```yaml
 Type: System.String
@@ -472,6 +493,10 @@ This cmdlet generates a **System.Diagnostics.Process** object, if you specify th
 parameter. Otherwise, this cmdlet does not return any output.
 
 ## NOTES
+
+- When using the **Wait** parameter, `Start-Process` waits for the process tree (the process and all
+  its descendants) to exit before returning control. This is different than the behavior of the 
+  `Wait-Process` cmdlet, which only waits for the specified processes to exit.
 
 - This cmdlet is implemented by using the **Start** method of the **System.Diagnostics.Process**
   class. For more information about this method, see

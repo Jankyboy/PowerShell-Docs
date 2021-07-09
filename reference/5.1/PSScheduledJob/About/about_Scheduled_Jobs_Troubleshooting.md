@@ -1,13 +1,14 @@
 ---
+description:  Explains how to resolve problems with scheduled jobs 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/about/about_scheduled_jobs_troubleshooting?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Scheduled_Jobs_Troubleshooting
+title: about Scheduled Jobs Troubleshooting
 ---
 
-# About Scheduled Jobs Troubleshooting
+# about_Scheduled_Jobs_Troubleshooting
 
 ## Short description
 
@@ -395,7 +396,7 @@ Use the `Get-ScheduledJobOption` cmdlet to examine the job options and their
 values.
 
 ```powershell
-Get-ScheduledJob -Name ProcessJob
+Get-ScheduledJobOption -Name ProcessJob
 ```
 
 ```Output

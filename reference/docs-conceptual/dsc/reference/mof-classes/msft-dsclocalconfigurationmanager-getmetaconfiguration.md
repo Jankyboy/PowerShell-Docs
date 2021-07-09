@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  GetMetaConfiguration method
+ms.topic: reference
+title: GetMetaConfiguration method
+description: GetMetaConfiguration method
 ---
 # GetMetaConfiguration method
 
@@ -11,7 +12,7 @@ Gets the local Configuration Manager settings that are used to control the Confi
 
 ```mof
 uint32 GetMetaConfiguration(
-  [out] MSFT_DSCMetaConfiguration MetaConfiguration
+  [out] MSFT_DSCMetaConfiguration MetaConfiguration
 );
 ```
 

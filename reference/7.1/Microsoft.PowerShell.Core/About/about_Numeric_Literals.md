@@ -1,12 +1,12 @@
 ---
-keywords: powershell,cmdlet
+description: Both integer and real numeric literals can have type and multiplier suffixes.
 Locale: en-US
 ms.date: 04/12/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_numeric_literals?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: About numeric literals
+title: about Numeric Literals
 ---
-# About numeric literals
+# about_Numeric_Literals
 
 There are two kinds of numeric literals: integer and real. Both can have type
 and multiplier suffixes.
@@ -356,4 +356,4 @@ denoted using the decimal-suffix `D` to maintain accuracy. Without the suffix,
 these values are parsed as `[Double]` using the real-parsing mode.
 
 <!-- reference links -->
-[bigint]: /dotnet/api/system.numerics.biginteger?view=netcore-2.2
+[bigint]: /dotnet/api/system.numerics.biginteger

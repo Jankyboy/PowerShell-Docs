@@ -1,12 +1,8 @@
 ---
-Download Help Link: https://Please-enter-FwLink-manually
+description: About topics cover a ranges of concepts about PowerShell.
 Help Version: 6.0
-keywords: powershell,cmdlet
 Locale: en-US
-Module Guid: 00000000-0000-0000-0000-000000000000
-Module Name: About
 ms.date: 02/25/2019
-schema: 2.0.0
 title: About topics
 ---
 # About topics
@@ -260,9 +256,6 @@ Describes how to run remote commands in PowerShell.
 ### [about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md)
 Explains how to disconnect from and reconnect to a PSSession.
 
-### [about_Remote_FAQ](about_Remote_FAQ.md)
-Contains questions and answers about running remote commands in PowerShell.
-
 ### [about_Remote_Jobs](about_Remote_Jobs.md)
 Describes how to run background jobs on remote computers.
 
@@ -379,6 +372,3 @@ Provides background information about Windows Management Instrumentation (WMI) a
 
 ### [about_WQL](about_WQL.md)
 Describes WMI Query Language (WQL), which can be used to get WMI objects in PowerShell.
-
-### [about_WS-Management_Cmdlets](about_WS-Management_Cmdlets.md)
-Provides an overview of Web Services for Management (WS-Management) as background for using the WS-Management cmdlets in PowerShell.

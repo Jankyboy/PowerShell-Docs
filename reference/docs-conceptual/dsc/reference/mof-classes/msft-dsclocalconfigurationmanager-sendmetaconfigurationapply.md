@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  SendMetaConfigurationApply method
+ms.topic: reference
+title: SendMetaConfigurationApply method
+description: SendMetaConfigurationApply method
 ---
 # SendMetaConfigurationApply method
 
@@ -11,8 +12,8 @@ Sets the Local Configuration Manager settings that are used to control the Confi
 
 ```mof
 uint32 SendMetaConfigurationApply(
-  [in] uint8   ConfigurationData[],
-  [in] boolean force
+  [in] uint8   ConfigurationData[],
+  [in] boolean force
 );
 ```
 

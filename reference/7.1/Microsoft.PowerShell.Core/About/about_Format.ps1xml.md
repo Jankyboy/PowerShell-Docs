@@ -1,13 +1,14 @@
 ---
+description:  Beginning in PowerShell 6, the default views for objects are defined in PowerShell source code.  You can create your own `Format.ps1xml` files to change the display of objects or to define default displays for new object types that you create in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 11/27/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_format.ps1xml?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Format.ps1xml
+title: about Format.ps1xml
 ---
 
-# About Format.ps1xml
+# about_Format.ps1xml
 
 ## Short description
 

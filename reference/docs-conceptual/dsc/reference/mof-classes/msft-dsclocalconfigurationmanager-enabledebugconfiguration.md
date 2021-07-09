@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  EnableDebugConfiguration method
+ms.topic: reference
+title: EnableDebugConfiguration method
+description: EnableDebugConfiguration method
 ---
 # EnableDebugConfiguration method
 
@@ -11,7 +12,7 @@ Enables DSC resource debugging.
 
 ```mof
 uint32 EnableDebugConfiguration(
-  [in] boolean BreakAll
+  [in] boolean BreakAll
 );
 ```
 

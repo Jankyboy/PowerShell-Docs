@@ -1,12 +1,13 @@
 ---
+description: Explains Data sections, which isolate text strings and other read-only data from script logic. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_data_sections?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Data_Sections
+title: about Data Sections
 ---
-# About Data Sections
+# about_Data_Sections
 
 ## Short Description
 Explains Data sections, which isolate text strings and other read-only
@@ -87,7 +88,7 @@ The value of `-SupportedCommand` is a comma-separated list of one or more
 cmdlet or function names.
 
 For example, the following data section includes a user-written cmdlet,
-`Format-XML`, that formats data in an XML file:
+`Format-Xml`, that formats data in an XML file:
 
 ```powershell
 DATA -supportedCommand Format-Xml

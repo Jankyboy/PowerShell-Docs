@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/14/2020
+ms.date: 11/02/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-modulemanifest?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ModuleManifest
@@ -827,7 +827,8 @@ Accept wildcard characters: False
 ### -PowerShellVersion
 
 Specifies the minimum version of PowerShell that works with this module. For example, you can enter
-1.0, 2.0, or 3.0 as the parameter's value.
+1.0, 2.0, or 3.0 as the parameter's value. It must be in an X.X format. For example, if you submit
+`5`, PowerShell will throw an error.
 
 ```yaml
 Type: System.Version
@@ -1174,6 +1175,12 @@ that is installed in the global assembly cache.
 To add or change files in the `$pshome\Modules` directory, start PowerShell with the **Run as
 administrator** option.
 
+> [!NOTE]
+> Beginning in PowerShell 6.2, PowerShell attempts to load all the DLL files listed in **FileList**
+> property of the module manifest. Native DLLs is in the **FileList** fail to load in the process
+> and the error is ignored. All managed DLLs are loaded in the process. This behavior was removed in
+> PowerShell 7.1.
+
 In PowerShell 2.0, many parameters of `New-ModuleManifest` were mandatory, even though they weren't
 required in a module manifest. Beginning in PowerShell 3.0, only the **Path** parameter is
 mandatory.
@@ -1202,4 +1209,3 @@ module and the caller's session state is the module's session state.
 [Test-ModuleManifest](Test-ModuleManifest.md)
 
 [about_Modules](./About/about_Modules.md)
-

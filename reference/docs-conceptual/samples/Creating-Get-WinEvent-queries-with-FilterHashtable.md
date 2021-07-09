@@ -1,6 +1,7 @@
 ---
-ms.date: 09/13/2019
+ms.date: 07/02/2021
 title: Creating Get-WinEvent queries with FilterHashtable
+description: This article how to use the FilterHashtable of Get-WinEvent to query the Windows Event logs.
 ---
 
 # Creating Get-WinEvent queries with FilterHashtable
@@ -101,7 +102,7 @@ Get-WinEvent -FilterHashtable @{LogName='Application'; 'Service'='Bits'}
 
 To verify results and troubleshoot problems, it helps to build the hash table one **key-value** pair
 at a time. The query gets data from the **Application** log. The hash table is equivalent to
-`Get-WinEvent –LogName Application`.
+`Get-WinEvent -LogName Application`.
 
 To begin, create the `Get-WinEvent` query. Use the **FilterHashtable** parameter's **key-value**
 pair with the key, **LogName**, and the value, **Application**.
@@ -112,14 +113,14 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-Continue to build the hash table with the **ProviderName** key. The **ProviderName** is the name
-that appears in the **Source** field in the **Windows Event Viewer**. For example, **.NET Runtime**
-in the following screenshot:
+Continue to build the hash table with the **ProviderName** key. Usually, the **ProviderName** is the
+name that appears in the **Source** field in the **Windows Event Viewer**. For example,
+`.NET Runtime` in the following screenshot:
 
 ![Image of Windows Event Viewer sources](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
 Update the hash table and include the **key-value** pair with the key, **ProviderName**, and the
-value, **.NET Runtime**.
+value, `.NET Runtime`.
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -127,6 +128,11 @@ Get-WinEvent -FilterHashtable @{
    ProviderName='.NET Runtime'
 }
 ```
+
+> [!NOTE]
+> For some event providers, the correct **ProviderName** can be obtained by looking on the
+> **Details** tab in **Event Properties**. For example, events where the **Source** field shows
+> `Defrag`, the correct **ProviderName** is `Microsoft-Windows-Defrag`.
 
 If your query needs to get data from archived event logs, use the **Path** key. The **Path** value
 specifies the full path to the log file. For more information, see the **Scripting Guy** blog post,
@@ -178,7 +184,7 @@ WdiDiagnostic    Property   static System.Diagnostics.Eventing.Reader.StandardEv
 ```
 
 The enumerated values are documented in the **.NET Framework**. For more information, see
-[StandardEventKeywords Enumeration](/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2).
+[StandardEventKeywords Enumeration](/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords).
 
 The **Keywords** names and enumerated values are as follows:
 
@@ -267,7 +273,7 @@ Warning       Property   static System.Diagnostics.Eventing.Reader.StandardEvent
 ```
 
 The enumerated values are documented in the **.NET Framework**. For more information, see
-[StandardEventLevel Enumeration](/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2).
+[StandardEventLevel Enumeration](/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel).
 
 The **Level** key's names and enumerated values are as follows:
 

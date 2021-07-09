@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  SendConfiguration method
+ms.topic: reference
+title: SendConfiguration method
+description: SendConfiguration method
 ---
 # SendConfiguration method
 
@@ -11,8 +12,8 @@ Sends the configuration document to the managed node and saves it as a pending c
 
 ```mof
 uint32 SendConfiguration(
-  [in] uint8   ConfigurationData[],
-  [in] boolean force
+  [in] uint8   ConfigurationData[],
+  [in] boolean force
 );
 ```
 

@@ -1,26 +1,25 @@
 ---
 title: Installing PowerShell on macOS
 description: Information about installing PowerShell on macOS
-ms.date: 08/24/2020
+ms.date: 04/26/2021
 ---
 
 # Installing PowerShell on macOS
 
-PowerShell supports macOS 10.12 and higher. PowerShell 7.0.3 or higher and PowerShell Preview
-7.1.0 or higher require macOS 10.13 and higher. All packages are available on our GitHub [releases][]
-page. After the package is installed, run `pwsh` from a terminal.
+PowerShell 7.0 or higher require macOS 10.13 and higher. All packages are available on our GitHub
+[releases][] page. After the package is installed, run `pwsh` from a terminal.
 
 > [!NOTE]
-> PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.
+> PowerShell 7.1 is an in-place upgrade that removes PowerShell Core 6.x and 7.0.
 >
 > The `/usr/local/microsoft/powershell/6` folder is replaced by `/usr/local/microsoft/powershell/7`.
 >
-> If you need to run PowerShell 6 side-by-side with PowerShell 7, reinstall PowerShell 6 using the
-> [binary archive](#binary-archives) method.
+> If you need to run and older version of PowerShell core side-by-side with PowerShell 7.1, install
+> the version you want using the [binary archive](#binary-archives) method.
 
 There are several ways to install PowerShell on macOS. Choose one of the following methods:
 
-- Install using Homebrew. Homebrew is the preferred package manager for macOS.
+- Install using [Homebrew][brew]. Homebrew is the preferred package manager for macOS.
 - Install PowerShell via [Direct Download](#installation-via-direct-download)
 - Install from [binary archives](#binary-archives).
 
@@ -32,10 +31,14 @@ needed for PowerShell remoting and CIM operations.
 If the `brew` command is not found, you need to install Homebrew following
 [their instructions][brew].
 
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
 Now, you can install PowerShell:
 
 ```sh
-brew cask install powershell
+brew install --cask powershell
 ```
 
 Finally, verify that your install is working properly:
@@ -48,7 +51,7 @@ When new versions of PowerShell are released, update Homebrew's formulae and upg
 
 ```sh
 brew update
-brew cask upgrade powershell
+brew upgrade powershell --cask
 ```
 
 > [!NOTE]
@@ -70,7 +73,7 @@ brew tap homebrew/cask-versions
 Now, you can install PowerShell:
 
 ```sh
-brew cask install powershell-preview
+brew install --cask powershell-preview
 ```
 
 Finally, verify that your install is working properly:
@@ -83,7 +86,7 @@ When new versions of PowerShell are released, update Homebrew's formulae and upg
 
 ```sh
 brew update
-brew cask upgrade powershell-preview
+brew upgrade powershell-preview --cask
 ```
 
 > [!NOTE]
@@ -119,13 +122,13 @@ brew upgrade powershell
 
 ## Installation via Direct Download
 
-Download the PKG package `powershell-lts-7.0.3-osx-x64.pkg` from the [releases][] page onto your
+Download the PKG package `powershell-7.1.3-osx-x64.pkg` from the [releases][] page onto your
 macOS machine.
 
 You can double-click the file and follow the prompts, or install it from the terminal:
 
 ```sh
-sudo installer -pkg powershell-lts-7.0.3-osx-x64.pkg -target /
+sudo installer -pkg powershell-7.1.3-osx-x64.pkg -target /
 ```
 
 Install [OpenSSL](#installing-dependencies). OpenSSL is needed for PowerShell remoting and CIM
@@ -156,23 +159,29 @@ dependencies.
 Install [OpenSSL](#installing-dependencies). OpenSSL is needed for PowerShell remoting and CIM
 operations.
 
+> [!NOTE]
+> You can use this method to install any version of PowerShell including the latest:
+> - Stable release: [https://aka.ms/powershell-release?tag=stable](https://aka.ms/powershell-release?tag=stable)
+> - Preview release: [https://aka.ms/powershell-release?tag=preview](https://aka.ms/powershell-release?tag=preview)
+> - LTS release: [https://aka.ms/powershell-release?tag=lts](https://aka.ms/powershell-release?tag=lts)
+
 ### Installing binary archives on macOS
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.0.3/powershell-7.0.3-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.1.3/powershell-7.1.3-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/7.0.3
+sudo mkdir -p /usr/local/microsoft/powershell/7.1.3
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.0.3
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.1.3
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/7.0.3/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/7.1.3/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/7.0.3/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/7.1.3/pwsh /usr/local/bin/pwsh
 ```
 
 ## Installing dependencies
@@ -208,7 +217,7 @@ if needed.
 If you installed PowerShell with Homebrew, use the following command to uninstall:
 
 ```sh
-brew cask uninstall powershell
+brew uninstall --cask powershell
 ```
 
 If you installed PowerShell via direct download, PowerShell must be removed manually:
@@ -225,7 +234,7 @@ and remove the paths using `sudo rm`.
 
 ## Paths
 
-- `$PSHOME` is `/usr/local/microsoft/powershell/7.0.3/`
+- `$PSHOME` is `/usr/local/microsoft/powershell/7.1.3/`
 - User profiles will be read from `~/.config/powershell/profile.ps1`
 - Default profiles will be read from `$PSHOME/profile.ps1`
 - User modules will be read from `~/.local/share/powershell/Modules`
@@ -239,7 +248,7 @@ exists at `Microsoft.PowerShell_profile.ps1` in the same locations.
 PowerShell respects the [XDG Base Directory Specification][xdg-bds] on macOS.
 
 Because macOS is a derivation of BSD, the prefix `/usr/local` is used instead of `/opt`. So,
-`$PSHOME` is `/usr/local/microsoft/powershell/7.0.3/`, and the symbolic link is placed at
+`$PSHOME` is `/usr/local/microsoft/powershell/7.1.3/`, and the symbolic link is placed at
 `/usr/local/bin/pwsh`.
 
 ## Installation support
@@ -254,9 +263,9 @@ support those methods.
 - [Homebrew Github Repository][GitHub]
 - [Homebrew-Cask][cask]
 
-[brew]: http://brew.sh/
+[brew]: https://docs.brew.sh/Installation
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
-[releases]: https://github.com/PowerShell/PowerShell/releases/latest
+[releases]: https://aka.ms/powershell-release?tag=stable
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

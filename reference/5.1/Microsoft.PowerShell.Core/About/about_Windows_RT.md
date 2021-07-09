@@ -1,13 +1,14 @@
 ---
+description:  Explains limitations of  Windows PowerShell 4.0 on Windows RT 8.1. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_rt?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_Windows_RT
+title: about Windows RT
 ---
 
-# About Windows RT
+# about_Windows_RT
 
 ## SHORT DESCRIPTION
 

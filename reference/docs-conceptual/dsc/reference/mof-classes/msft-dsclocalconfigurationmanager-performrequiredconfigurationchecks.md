@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  PerformRequiredConfigurationChecks method
+ms.topic: reference
+title: PerformRequiredConfigurationChecks method
+description: PerformRequiredConfigurationChecks method
 ---
 # PerformRequiredConfigurationChecks method
 
@@ -11,7 +12,7 @@ Starts a consistency check by using the Task Scheduler.
 
 ```mof
 uint32 PerformRequiredConfigurationChecks(
-  [in] uint32 Flags
+  [in] uint32 Flags
 );
 ```
 

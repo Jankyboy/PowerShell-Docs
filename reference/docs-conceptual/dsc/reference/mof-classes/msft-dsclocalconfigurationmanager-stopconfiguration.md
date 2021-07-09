@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  StopConfiguration method
+ms.topic: reference
+title: StopConfiguration method
+description: StopConfiguration method
 ---
 # StopConfiguration method
 
@@ -11,7 +12,7 @@ Stops the configuration change that is in progress.
 
 ```mof
 uint32 StopConfiguration(
-  [in] boolean force
+  [in] boolean force
 );
 ```
 

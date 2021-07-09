@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  SendConfigurationApply method
+ms.topic: reference
+title: SendConfigurationApply method
+description: SendConfigurationApply method
 ---
 # SendConfigurationApply method
 
@@ -11,8 +12,8 @@ Sends the configuration document to the managed node and uses the Configuration 
 
 ```mof
 uint32 SendConfigurationApply(
-  [in] uint8   ConfigurationData[],
-  [in] boolean force
+  [in] uint8   ConfigurationData[],
+  [in] boolean force
 );
 ```
 
